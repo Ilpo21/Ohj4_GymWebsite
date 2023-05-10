@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Gym - Ryhmävaraus</title>
+  <link rel="icon" href="nettisivulogo.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/yhteystiedot.css">
+</head>
+
+<body>
+<header style="display: flex; justify-content: center; align-items: center; background-color: #151515; box-shadow: 0px 1px 5px rgba(255,255,255,0.1); padding: 20px;">
+  <nav style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <ul style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <li style="flex-basis: 25%;"><a href="index.html">Etusivu</a></li>
+      <li style="flex-basis: 25%;"><a href="ryhmäliikunta.html">Ryhmäliikunta</a></li>
+      <li style="flex-basis: 25%;"><a href="personal-trainer.html">Personal trainer</a></li>
+      <li style="flex-basis: 25%;"><a href="yhteystiedot.html">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Ajanvaraus ryhmäliikuntatunnille</h2>
+    <p></p>
+
+    <label for="tunti">Valitse ryhmäliikunta laji:</label>
+
+    <select id="tunti" name="tunti">
+      <option value="Make">Jooga</option>
+      <option value="Liisa">Pilates</option>
+      <option value="Jenni">Spinning</option>
+    </select>
+    <form action="submit_form.php" method="post">
+      <label for="name">Nimi</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Sähköposti</label>
+      <input type="email" id="email" name="email">
+      <label for="message">Mikä päivä</label>
+      <iframe src="https://calendar.google.com/calendar/embed?height=250&wkst=2&bgcolor=%23B39DDB&ctz=Europe%2FHelsinki&showTz=0&showCalendars=0&showPrint=0&showTabs=0&showDate=1&showNav=1&src=NTNiZDk2ZjVjMzdiMmUxNmI3NWRlYWQ0YmQxNDc4MTdiZGE2MjEzMTdhZTE0YWY1YmRhYzg1YmEzMjMyYTdkZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" style="border:solid 1px #777" width="500" height="500" frameborder="0" scrolling="no"></iframe>
+      <label for="message">Muuta</label>
+      <textarea id="message" name="message"></textarea>
+    </form>
+
+    <button onclick="showPopup()">Lähetä</button>
+
+    <!-- Pop up Box-->
+    <div id="popup" class="popup" style="display: none;">
+      <h3>Kiitos ajanvarauksestasi!</h3>
+      <button onclick="closePopup()">OK</button>
+    </div>
+
+    <script>
+      
+      function showPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+      
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 My Gym. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Gym - Hinnasto</title>
+  <link rel="icon" href="nettisivulogo.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/yhteystiedot.css">
+  <link rel="stylesheet" type="text/css" href="css/ajanvaraus.css">
+</head>
+
+<body>
+<header style="display: flex; justify-content: center; align-items: center; background-color: #151515; box-shadow: 0px 1px 5px rgba(255,255,255,0.1); padding: 20px;">
+  <nav style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <ul style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <li style="flex-basis: 25%;"><a href="index.html">Etusivu</a></li>
+      <li style="flex-basis: 25%;"><a href="ryhmäliikunta.html">Ryhmäliikunta</a></li>
+      <li style="flex-basis: 25%;"><a href="personal-trainer.html">Personal trainer</a></li>
+      <li style="flex-basis: 25%;"><a href="yhteystiedot.html">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Ajanvaraus Personal Trainerille</h2>
+    <p>Voit samalla myös kysyä muita käytänteitä.</p>
+
+    <label for="PT">Valitse personal-trainer:</label>
+
+    <select id="PT" name="PT">
+      <option value="Make">Make</option>
+      <option value="Liisa">Liisa</option>
+      <option value="Jenni">Jenni</option>
+      <option value="Jyrki">Jyrki</option>
+    </select>
+    <form action="submit_form.php" method="post">
+      <label for="name">Nimi</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Sähköposti</label>
+      <input type="email" id="email" name="email">
+      <label for="message">Mikä päivä</label>
+      <input type="date" id="varaus" name="varaus">
+      <label for="message">Muuta</label>
+      <textarea id="message" name="message"></textarea>
+    </form>
+
+    <!-- Pop up Box-->
+    <button onclick="showPopup()">Lähetä</button>
+
+    
+    <div id="popup" class="popup" style="display: none;">
+      <h3>Kiitos ajanvarauksestasi!</h3>
+      <button onclick="closePopup()">OK</button>
+    </div>
+
+    <script>
+      
+      function showPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+     
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+
+  </section>
+</main>
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 My Gym. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
